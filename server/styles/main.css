@@ -1,0 +1,81 @@
+@import '_define.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-sans-worksans: 'Work Sans',
+    /*
+                  * "-apple-system" targets San Francisco
+                  * in Safari on Mac OS X and iOS, and
+                  * Neue Helvetica and Lucida Grande on older
+                  * versions of Mac OS X. It properly selects
+                  * between San Francisco Text
+                  * and San Francisco Display.
+                  */ -apple-system,
+    /* For Chrome on Mac OS X */ BlinkMacSystemFont,
+    /* Microsoft Windows and Windows Phone */ 'Segoe UI', /* Android */ 'Roboto',
+    /* KDE */ 'Oxygen', 'Ubuntu', /* Fedora */ 'Cantarell',
+    /* FirefoxOS */ 'Fira Sans', /* Android 2 */ 'Droid Sans',
+    /* MacOS 2 */ 'Helvetica Neue', sans-serif;
+  --text-sans-serif: 'Helvetica Neue', 'Arial Nova', Helvetica, Arial,
+    sans-serif;
+  --text-serif: Times, 'Times New Roman', serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: fit-content;
+  width: 100%;
+  @mixin font-custom-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.05rem;
+  background-color: #303030;
+}
+
+h1 {
+  @apply font-bold text-3xl;
+}
+
+h2 {
+  @apply font-bold text-2xl;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  @mixin generic-link;
+}
+
+#main-content-wrapper {
+  @apply w-full flex flex-col justify-start items-center text-base leading-5;
+}
+
+#main-content {
+  @mixin generic-content-wrapper;
+  @apply px-4 pt-4 pb-10;
+}
+
+#buttons-wrapper {
+  @apply w-full flex gap-5 flex-row justify-center items-center;
+
+  > a {
+    @apply cursor-pointer border border-solid border-white;
+    width: 45px;
+  }
+}
+
+#blog-article {
+  @apply w-full px-4 py-6 md:px-8 md:py-10 flex flex-col justify-start items-start bg-white text-gray-900;
+}

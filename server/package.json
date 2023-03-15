@@ -1,0 +1,30 @@
+{
+  "name": "astralscience-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier --write \"*.{js,md,json}\" \"**/*.{css,html,js}\"",
+    "build:css": "postcss styles --dir public/css",
+    "watch:css": "nodemon -x $npm_execpath run build:css -e css,html,njk -w styles -w views",
+    "watch:www": "nodemon -x node ./bin/www -e html,njk,js,txt -w '*.js' -w views",
+    "watch": "concurrently \"$npm_execpath run watch:css\" \"$npm_execpath run watch:www\""
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "express": "^4.18.2",
+    "express-generator": "^4.14.1",
+    "http-errors": "^2.0.0",
+    "nunjucks": "^3.2.3",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-mixins": "^9.0.4",
+    "postcss-preset-env": "^8.0.1",
+    "prettier": "^2.8.4"
+  }
+}

@@ -1,0 +1,29 @@
+@define-mixin font-custom-sans {
+  font-family: var(--text-sans-worksans);
+}
+
+@define-mixin font-custom-serif {
+  font-family: var(--text-serif);
+}
+
+@define-mixin generic-link {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: underline;
+    color: #101010;
+  }
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    color: #808080;
+  }
+}
+
+@define-mixin generic-content-wrapper {
+  width: 99%;
+  @media (min-width: 768px) {
+    width: 85%;
+    max-width: 1024px;
+  }
+}

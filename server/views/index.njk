@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <base href="/" />
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Faust "First Part of the Tragedy"</title>
+</head>
+
+<body>
+  <div id="main-content-wrapper">
+    <div id="main-content">
+      <!-- Buttons -->
+      <div id="buttons-wrapper">
+        <a onClick="change_language('en'); return false;">
+          <img src="/images/flag_us.png" alt="English" />
+        </a>
+
+        <a onClick="change_language('ja'); return false;">
+          <img src="/images/flag_jp.png" alt="Japanese" />
+        </a>
+      </div>
+
+      <!-- Article -->
+      <article id="blog-article" class="mt-5">
+        <!-- English -->
+        <div id="translate-en" class="hidden">
+          {% include "data/faust_en.html" %}
+        </div>
+
+        <!-- Japanese -->
+        <div id="translate-ja" class="hidden">
+          {% include "data/faust_ja.html" %}
+        </div>
+      </article>
+    </div>
+  </div>
+
+<script>
+const el = { en: null, ja: null };
+let locale = '';
+
+const get_from_cookie = () => 'en';
+
+const change_language = _loc => {
+  if (el['en'] && el['ja']) {
+    if (_loc === 'en') {
+      el['en'].style.display = 'block';
+      el['ja'].style.display = 'none';
+    } else {
+      el['en'].style.display = 'none';
+      el['ja'].style.display = 'block';
+    }
+  }
+};
+
+const init = () => {
+  locale = get_from_cookie() || 'en';
+  el['en'] = document.querySelector('#translate-en');
+  el['ja'] = document.querySelector('#translate-ja');
+  change_language(locale);
+};
+
+window.addEventListener('load', event => {
+  init();
+});
+</script>
+
+</body>
+</html>

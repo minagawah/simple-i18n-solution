@@ -1,0 +1,15 @@
+{
+  "name": "simple-i18n-solution",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A simplified version of what I have for my website for i18n localization.",
+  "repository": "https://github.com/minagawah/simple-i18n-solution.git",
+  "keywords": [
+    "i18n"
+  ],
+  "author": "minagawah <minag@tokyo800.jp>",
+  "license": "(Unlicense OR MIT)",
+  "bugs": {
+    "url": "https://github.com/minagawah/simple-i18n-solution/issues"
+  }
+}

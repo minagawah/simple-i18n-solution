@@ -70,7 +70,8 @@ typings/
 
 # dotenv environment variables file
 .env
-.env.test
+#.env.test
+.env.*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -102,3 +103,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Others
+build/
+package-lock.json
+target
