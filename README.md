@@ -19,7 +19,7 @@ Basically, this is how it goes:
 __I'm not saying you should go back to the 90s.__
 From designers perspective, they don't want to deal with
 a collection of random texts scattered around in JSON format.
-__Instead, they want HTML, or to work on a group of DOM elements in a chunk.__
+__Instead, they want HTML, or to work on a group of DOM elements as a chunk.__
 
 So, the idea behind is this:  
 __Pass the data as DOM elements from the server-side.__
@@ -32,7 +32,7 @@ Whenever I want translations for a page, I embed the widget, and the widget take
 - __Always have 2 templates__ for 2 languages which is intuitive to manage.
 - You can avoid __hundreds of locale files scattered around the project__ which is hard to grasp.  
 (which happens when managing i18n on JS side)
-- __Designers get to work on the page as HTML__, not as chunks of JSON key-values.
+- __Designers get to work on the page as HTML__, not meaningless JSON key-values.
 
 ## 2. Instructions
 
